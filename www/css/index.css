@@ -1,0 +1,190 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#fff;
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+#home .logoHeader{
+    margin-top: 6px;
+    height: 32px;
+    background-image: url(../img/logo-tinder.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain}
+
+#home button-header-left{
+    height: 28px;
+    margin-bottom:5px;
+    background-image: url(../img/icon-left.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain}
+
+#home button-header-right{
+    height: 28px;
+    margin-bottom:5px;
+    background-image: url(../img/icon-right.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain}
+
+#backgroundCard3{
+    z-index: 4}
+
+#backgroundCard2{
+    z-index: 3}
+
+.backgroundCard{
+    position: absolute;
+    width: 100%;
+    padding: 10px;
+    top: 0px;
+    bottom: 0px}
+
+.backgroundCard.level3{
+    z-index: 3}
+
+.backgroundCard.level2{
+    z-index: 2}
+
+.backgroundCard.level1{
+    z-index: 1}
+
+.backgroundCard.level0{
+    z-index: 0}
+
+.card{
+    position: relative;
+    border: 1px solid #a8a8a8;
+    margin: auto;
+    background-color: #fff;
+    width: 100%;
+    height: 360px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.07);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.07);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.07);}
+
+.backgroundCard.level1{
+    padding: 15px;
+}
+
+.backgroundCard.level1 .card{
+    width: 100%;
+}
+
+.backgroundCard.level0{
+    padding: 20px;
+}
+
+.backgroundCard.level0 .card{
+    width: 100%;
+}
+
+#card3 .photo{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+    height: 305px;
+    background-image: url(../img/photoCatA.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: 9}
+
+.like{
+    position: absolute;
+    width: 100%;
+    height: 305px;
+    background-image: url(../img/like.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+    z-index: 10;
+    opacity: 0}
+
+.nope{
+    position: absolute;
+    width: 100%;
+    height: 305px;
+    background-image: url(../img/nope.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+    z-index: 10;
+    opacity: 0}
+
+#card2 .photo{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+    height: 305px;
+    background-image: url(../img/photoCatB.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover}
+
+.card .name{
+    color: #424242;
+    padding-top: 6px;
+    padding-left: 15px;
+    font-size: 17px;
+    font-weight: bold}
+
+.card .location{
+    color: #ababab;
+    padding-left: 15px;
+    font-size: 13px}
+
+#home #menu{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    height: 105px;
+    background-image: url(../img/menu-inf.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain}
+
+.JSVcontainerLeftCard{
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0)}
+
+.JSVcontainerRightCard{
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0)}
+
+.JSVcontainerCenterCard{
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)}
+
+/*PARA HACER LA ROTACION CON CMABIO DE STILO*/
+.JSVcontainerTransitionRotateLeftCard{
+    -webkit-transform: translate3d(-100%, 0, 0) rotate(-5deg);
+    transform-origin: center bottom;
+    transform: translate3d(-100%, 0, 0) rotate(-5deg);
+    -webkit-transition-duration: .15s;
+    transition-duration: .15s}
+
+.JSVcontainerTransitionRotateRightCard{
+    -webkit-transform: translate3d(100%, 0, 0) rotate(5deg);
+    transform-origin: center bottom;
+    transform: translate3d(100%, 0, 0) rotate(5deg);
+    -webkit-transition-duration: .15s;
+    transition-duration: .15s}
+
+.JSVcontainerTransitionCard {
+    -webkit-transition-duration: .25s;
+    transition-duration: .25s}

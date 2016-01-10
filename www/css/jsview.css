@@ -1,0 +1,993 @@
+/*
+JavaScript View, opensource library :) 
+This is Javascript and Love
+www.javascriptview.com
+contact@javascriptview.com
+
+Here you can write your custom CSS
+*/
+
+/*Generic*/
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box}
+
+html, body{
+    overflow: hidden}
+
+body {
+    font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    color: #333333;
+    font-size: 14px;
+    font-weight: 300;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+    position: absolute}
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+    -webkit-appearance: caret;
+    -moz-appearance: caret
+    display: block;
+    padding-top: 2px;
+    padding-left: 0;
+    height: 34px;
+    color: #111;
+    vertical-align: middle;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 16px}
+
+textarea{
+    width: 100%;
+    height: 100px}
+
+/*-----------------*/
+
+/*Containers and Content*/
+jsv-main, jsv-container, jsv-view{
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    overflow:hidden;
+    z-index: 9}
+
+.JSVcontainerForeground{
+    z-index: 9}
+
+.JSVcontainerBackground{
+    z-index: -1}
+
+.jsv-main-bottom, .jsv-view-bottom{
+    bottom: 44px}
+
+.jsv-main-left, .jsv-view-left{
+    bottom: 0px}
+
+jsv-content{
+    position: absolute;
+    top: 44px;
+    bottom: 0px;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 8;
+    -webkit-overflow-scrolling:touch}
+
+.JSVcontainerHide{
+    opacity: 0;
+    z-index: -1}
+
+.JSVcontainerShow{
+    opacity: 1;
+    z-index: 99999}
+
+jsv-header{
+    position: absolute;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    top: 0px;
+    width: 100%;
+    height: 44px;
+    padding-left: 55px;
+    padding-right: 55px;
+    text-align: center;
+    line-height: 43px;
+    font-size: 16px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    z-index: 9}
+
+.cWhite{
+    color: #fff}
+
+.bgWhite{
+    background-color: #fff}
+
+.cGrey{
+    color: #333333}
+
+.bgGrey{
+    background-color: #333333}
+
+.cYellow{
+    color: #f8dc3c}
+
+.bgYellow{
+    background-color: #f8dc3c} 
+
+.strong{
+    font-weight: bold}
+
+button{
+    width: 100%;
+    height: 42px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    text-overflow: ellipsis}
+
+.item{
+    background-color: #fff;
+    position: relative;
+    display: block;
+    padding: 6px;
+    border: 1px solid #ddd;
+    font-size: 14px}
+
+input, textarea{
+    width: 100%;
+    height: 42px;
+    padding-left: 10px;
+    border: none}
+
+.paddingFull10{
+    padding: 10px}
+
+.paddingFull20{
+    padding: 20px}
+
+jsv-header button-header-right{
+    position: absolute;
+    color: #999;
+    font-size: 30px;
+    display: block;
+    float: right;
+    bottom: 0px;
+    text-align: right;
+    right: 10px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 14px}
+
+jsv-header button-header-left{
+    position: absolute;
+    color: #999;
+    font-size: 30px;
+    display: block;
+    float: left;
+    bottom: 0px;
+    text-align: left;
+    left: 10px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 14px}
+/*-----------------*/
+
+/*Tabs*/
+jsv-tabs jsv-tab{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: block;
+    line-height: 45px;
+    text-align: center;
+    width: 100%}
+
+jsv-tabs jsv-tab.active{
+    border-bottom: 3px solid #ccc}
+    
+jsv-tabs {
+    position: absolute;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 45px;
+    width: 100%;
+    border-bottom: 1px solid #ccc}
+
+jsv-content jsv-tab{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling:touch;
+    z-index: 0}
+
+jsv-content jsv-tab.active{
+    z-index: 9}
+
+.jsv-no-border{
+    border: none !important}
+/*-----------------*/
+
+/*Modal*/
+jsv-modal{
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    overflow:auto;
+    z-index: 99}
+/*-----------------*/
+
+/*Modal Menu*/
+jsv-modal-menu{
+    background-color:rgba(0,0,0,0.6);
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    opacity: 0;
+    z-index: -99;
+    -webkit-transition-duration: .25s;
+    transition-duration: .25s}
+
+jsv-modal-menu jsv-list{
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    padding: 10px;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    -webkit-transition-duration: .25s;
+    transition-duration: .25s}
+
+jsv-modal-menu jsv-list ul{
+    text-align: center;
+    border: none}
+
+jsv-modal-menu jsv-list ul li{
+    padding-left: 0px;
+    background-color: #fff}
+
+jsv-modal-menu jsv-list ul li:last-child {
+    border: none;
+    margin-top: 10px}
+
+jsv-modal-menu jsv-list ul li:nth-last-child(2) {
+    border: none}
+
+.jsv-modal-menu-show{
+    opacity: 1;
+    z-index: 99}
+/*-----------------*/
+
+/*Menu left*/
+.jsv-main-left{
+    border-left: 1px solid #ddd}
+
+jsv-menu-left{
+    position: absolute;
+    width: 80%;
+    top: 0px;
+    bottom: 0px;
+    overflow:auto;
+    z-index: 0}
+
+jsv-menu-left jsv-menu{
+    padding: 0;
+    margin: 0;
+    padding-left: 10px}
+
+jsv-menu-left jsv-menu jsv-option{
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    margin-left: 10px;
+    float: left}
+/*-----------------*/
+
+/*Menu bottom*/
+jsv-menu-bottom{
+    position: absolute;
+    width: 100%;
+    height: 44px;
+    border-top: 1px solid #ddd;
+    bottom: 0px;
+    overflow:auto;
+    z-index: 0}
+
+jsv-menu-bottom jsv-menu{
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style-type: none;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 5px;
+    width: 100%}
+
+jsv-menu-bottom jsv-menu jsv-option{
+    float: left;
+    text-align: center;
+    height: 43px;
+    font-size: 12px;
+    line-height: 43px;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: block;
+    width: 100%}
+/*-----------------*/
+
+/*Notifications*/
+.notification{
+    position: absolute;
+    top: 0px;
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    height: auto;
+    font-size: 12px;
+    min-height: 30px;
+    line-height: 30px;
+    text-align: center;
+    z-index: 9}
+
+/*LOADMORE RELOAD*/
+jsv-refresh{
+    /*width: 95%;
+    height: 30px;*/
+    /*position: absolute;*/
+    /*margin-top: -30px*/}
+/*Lists*/
+jsv-list{
+    width: 100%}
+
+jsv-list ul{
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #ddd;
+    list-style-type: none}
+
+jsv-list li{
+    width: 100%;
+    padding-left: 10px;
+    min-height: 43px;
+    line-height: 43px;
+    border-bottom: 1px solid #ddd}
+
+jsv-list li.divider{
+    background-color: #f5f5f5}
+
+/*List Photo*/
+jsv-list.photo-list jsv-item{
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding-left: 70px}
+
+jsv-list.photo-list jsv-item .photo{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #f5f5f5}
+
+jsv-list.photo-list jsv-item h3{
+    line-height: 30px;
+    margin: 0px;
+    padding: 0px}
+
+jsv-list.photo-list jsv-item h3 span{
+    font-size: 12px}
+
+jsv-list.photo-list jsv-item p{
+    line-height: 20px;
+    margin: 0px;
+    padding: 0px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis}
+
+jsv-list.photo-list jsv-item .tools{
+    padding: 0;
+    height: 30px;
+    line-height: 20px}
+
+jsv-list.photo-list jsv-item .tools .col{
+    font-size: 12px;
+    font-weight: 500;
+    padding-left: 0}
+
+/*List Photo*/
+jsv-list.tweet-list jsv-item{
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding-left: 70px}
+
+jsv-list.tweet-list jsv-item .photo{
+    position: absolute;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #f5f5f5}
+
+jsv-list.tweet-list jsv-item h3{
+    line-height: 30px;
+    margin: 0px;
+    padding: 0px}
+
+jsv-list.tweet-list jsv-item h3 span{
+    font-size: 12px}
+
+jsv-list.tweet-list jsv-item p{
+    line-height: 20px;
+    margin: 0px;
+    padding: 0px;
+    overflow:hidden}
+
+jsv-list.tweet-list jsv-item .tools{
+    padding: 0;
+    height: 30px;
+    line-height: 20px}
+
+jsv-list.tweet-list jsv-item .tools .col{
+    font-size: 12px;
+    font-weight: 500;
+    padding-left: 0}
+
+/*List videos*/
+
+jsv-list.video-list jsv-item{
+    min-height: 120px;
+    background-color: #fff;
+    position: relative;
+    display: block;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0px;
+    width: 100%}
+
+jsv-list.video-list jsv-item div:nth-child(1){
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #f5f5f5;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: block;
+    width: 100%}
+
+jsv-list.video-list jsv-item div:nth-child(2){
+    padding: 1px 1px 1px 7px;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: block;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%} 
+
+jsv-list.video-list jsv-item h4{
+    padding: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px}
+
+jsv-list.video-list jsv-item p{
+    padding: 0px}
+
+/*List cards*/
+jsv-list.card-list{
+    padding: 10px}
+
+jsv-list.card-list{
+    float: left;
+    border: 0px;
+    padding-left: 10px;
+    padding-right: 10px}
+
+jsv-list.card-list jsv-item{
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    height: auto;
+    min-height: auto;
+    border-bottom: 3px solid #ddd}
+
+jsv-list.card-list jsv-item .photo{
+    margin-bottom: 10px;
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+    background-color: #f5f5f5}
+
+jsv-list.card-list jsv-item h3{
+    line-height: 30px;
+    margin: 0px}
+
+jsv-list.card-list jsv-item p{
+    line-height: 20px;
+    margin: 0px}
+
+jsv-list.card-list jsv-item .tools{
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+    padding: 0;
+    height: 30px;
+    line-height: 20px}
+
+jsv-list.card-list jsv-item .tools .col{
+    font-size: 12px;
+    font-weight: 500;
+    padding-left: 0;}
+
+/*Chat room*/
+button-header-right .photo{
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+
+jsv-content < jsv-room{
+    overflow-y: hidden}
+
+jsv-content jsv-room{
+    position: absolute;
+    top: 0px;
+    bottom: 43px;
+    width: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling:touch}
+
+jsv-room ul{
+    padding: 10px;
+    margin: 0;
+    border-top: 1px solid #ddd;
+    list-style-type: none}
+
+jsv-room ul li{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px}
+
+jsv-room ul li.left{
+    max-width: 90%;
+    float: left;
+    padding: 10px;
+    padding-left: 10px}
+
+jsv-room ul li.right{
+    max-width: 90%;
+    float: right;
+    padding: 10px;
+    padding-right: 10px}
+
+jsv-room ul li.right p{
+    text-align: right}
+
+jsv-room ul li.left div.date{
+    font-size: 12px;
+    text-align: right}
+
+jsv-room ul li.right div.date{
+    font-size: 12px;
+    text-align: left}
+    
+jsv-room ul li.right p{
+    float: right}
+
+jsv-room ul li.left p{
+    float: left}
+
+jsv-room ul li p{
+    line-height: 20px;
+    margin: 0px}
+
+jsv-room-input{ 
+    height: 43px;
+    padding: 5px;
+    border-top: 1px solid #ddd;
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+    margin: 0px;
+    padding: 5px}
+
+jsv-room-input label{
+    width: 80%;
+    float: left;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0px !important}
+
+jsv-room-input input{
+    width: 100%;
+    float: left;
+    height: 30px !important;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px}
+
+jsv-room-input button{
+    width: 20%;
+    height: 30px !important;
+    background: none;
+    border: none;
+    padding: 5px;
+    float: right}
+
+/*Rows and cols*/
+.col{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: block;
+    padding: 5px;
+    width: 100%}
+
+.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 5px;
+    width: 100%}
+
+.colDemo {
+    padding: 5px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    background: #f7f7f7;
+    text-align: center}
+
+/*Menu Circle*/
+jsv-menu-circle{
+    position: absolute;
+    right: 10px;
+    font-size: 25px;
+    background-color: #333333;
+    color: #f8dc3c;
+    -webkit-transition-duration: .25s;
+    transition-duration: .25s;
+    overflow: hidden;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    text-align: right;
+    z-index: 9}
+
+jsv-menu-circle:before{
+    padding-right: 12px;
+    content: "+"} 
+
+.JSVmenuCircleOpen{
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    border-radius: 0px;
+    line-height: 50px;
+    text-align: right}
+
+.JSVmenuCircleOpen:before{
+    padding-right: 12px;
+    padding-left: 10px;
+    content: "x"} 
+
+jsv-menu-circle jsv-list{
+    width: 100%;
+    font-size: 14px;
+    line-height: 30px}
+
+jsv-menu-circle ul, jsv-menu-circle li{
+    text-align: left;
+    border: none}
+
+/*Image Popup*/
+.photo{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover}
+
+jsv-image-popup{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover}
+
+jsv-image-popup{
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    background-color: #000;
+    z-index: -1;
+    opacity: 0;
+    -webkit-transition-duration: .25s;
+    transition-duration: .25s}
+
+jsv-image-popup.show{
+    z-index: 99;
+    opacity: 1}
+
+jsv-image-popup jsv-header{
+    background-color: #000;
+    border: none !important}
+
+jsv-image-popup jsv-header button-header-right{
+    color: #fff !important}
+
+jsv-image-popup .tools{
+    position: absolute;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    bottom: 0px;
+    width: 100%;
+    height: 50px}
+	
+/*Spinner in scroll and modal*/
+jsv-fullspinner{
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    background-color:rgba(0,0,0,0.6)}
+
+#JSVgifLoading{
+    background: #000;
+    border-radius: 10px;
+    font-size: 30px;
+    color: #ededed;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70%;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center}
+
+.JSVhideLoading{
+    opacity: 0;
+    z-index: -99999}
+
+.JSVshowLoading{
+    opacity: 1;
+    z-index: 99999}
+
+.JSVspinnerBlack {
+    margin: auto;
+    padding-top: 7px;
+    width:30px; 
+    height 30px;
+    stroke: #444;
+    fill: #444}
+
+.JSVspinnerWhite {
+    margin: auto;
+    padding-top: 7px;
+    width:35px; 
+    height 35px;
+    stroke: #ccc;
+    fill: #ccc}
+/*-----------------*/
+
+/*Slides*/
+.JSVindicator ul, .JSVindicator li {
+    padding:10px;
+    margin:0}
+
+.JSVwrapper {
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    height: 100%;
+    float:left;
+    overflow:hidden}
+
+.JSVscroller {
+    height:95%;
+    float:left;
+    padding:0}
+
+.JSVscroller ul {
+    list-style:none;
+    display:block;
+    float:left;
+    width:100%;
+    height:100%;
+    padding:0;
+    margin:0;
+    text-align:left}
+
+.JSVscroller li {
+    padding: 10px;
+    display:block; 
+    float:left}
+
+.JVSnav {
+    width:100%;
+    float:left}
+
+.JSVindicator {
+    text-align: center;
+    padding: 0;
+    margin:auto}
+
+.JSVindicator > li {
+    display: inline-block;
+    list-style:none;
+    padding:0; 
+    margin:0;
+    text-indent:-9999em;
+    width:8px; 
+    height:8px;
+    border-radius:4px;
+    background:#ddd;
+    margin-right:4px}
+
+.JSVindicator > li.active {
+    background:#888}
+
+.JSVindicator > li:last-child {
+    margin:0}
+/*-----------------*/
+
+/*SlidesAdvertising*/
+.JSVindicatorAd ul, .JSVindicatorAd li {
+    padding:10px;
+    margin:0}
+
+.JSVwrapperAd {
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    height: 100%;
+    float:left;
+    overflow:hidden}
+
+.JSVscrollerAd {
+    height:95%;
+    float:left;
+    padding:0}
+
+.JSVscrollerAd ul {
+    padding: 20px;
+    list-style:none;
+    display:block;
+    float:left;
+    width:100%;
+    height:100%;
+    padding:0;
+    margin:0;
+    text-align:left}
+
+.JSVscrollerAd li {
+    border: solid 1px #ddd;
+    border-radius: 10px;
+    display:block; 
+    float:left}
+
+.JSVscrollerAd .title{
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500}
+
+.JSVscrollerAd .description{
+    padding: 10px;
+    font-size: 14px}
+
+.JSVscrollerAd .photo{
+    width:100%;
+    height: 170px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover}
+
+.JSVscrollerAd li {
+    margin-right: 10px}
+
+.JSVscrollerAd li:first-child {
+    margin-left: 10px}
+
+/*-----------------*/
+
+/*Divs translate and transition*/
+.JSVcontainerLeft{
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0)}
+
+.JSVcontainerRight{
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0)}
+
+.JSVcontainerCenter{
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)}
+
+.JSVcontainerTop{
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0)}
+
+.JSVcontainerBottom{
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0)}
+
+.JSVcontainerLeftMenuSide{
+    -webkit-transform: translate3d(80%, 0, 0);
+    transform: translate3d(80%, 0, 0)}
+
+.JSVcontainerTransition {
+    -webkit-transition-duration: .25s;
+    transition-duration: .25s}
+/*-----------------*/
+
+.JSVstartLoading{
+    -webkit-transform: translate3d(0, 44px, 0);
+    transform: translate3d(0, 44px, 0)}
+
+.JSVfinishLoading{
+    -webkit-transform: translate3d(0, 44px, 0);
+    transform: translate3d(0, 44px, 0)}
