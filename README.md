@@ -2,9 +2,9 @@
   <img src="./assets/banner.jpg" />
 </p>
 
-<h1 align="center">Tinder Interface for cats</h1>
+<h1 align="center">Tinder Interface for Cats</h1>
 
-<p align="center">📱Creating the interface of ❤️ Tinder application with HTML5, CSS3 and JS for cats.</p>
+<p align="center">📱Creating the interface similar to ❤️ Tinder Application with HTML5, CSS3 and JS for cats.</p>
 
 <p align="center">
   <a title="MIT License" href="LICENSE.md">
