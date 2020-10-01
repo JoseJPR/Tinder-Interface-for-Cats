@@ -1,0 +1,34 @@
+{
+  "name": "tinder",
+  "version": "1.0.0",
+  "description": "📱Creating the interface ❤️ Tinder application with HTML5, CSS3 and JS for cats.",
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoseJPR/Tinder.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Tinder",
+    "JavaScript View",
+    "HammerJS"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JoseJPR/Tinder/issues"
+  },
+  "homepage": "https://github.com/JoseJPR/Tinder#readme",
+  "dependencies": {
+    "fastify": "^3.5.0",
+    "fastify-static": "^3.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}

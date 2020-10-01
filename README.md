@@ -1,38 +1,73 @@
-# Creating an interface of "Tinder" for cats
+<p align="center">
+  <img src="./assets/banner.jpg" />
+</p>
 
-* "Tinder" application for cats with HTML5, CSS3 and JS!
+<h1 align="center">Tinder Interface for cats</h1>
+
+<p align="center">📱Creating the interface of ❤️ Tinder application with HTML5, CSS3 and JS for cats.</p>
+
+<p align="center">
+  <a title="MIT License" href="LICENSE.md">
+    <img src="https://img.shields.io/github/license/gridsome/gridsome.svg?style=flat-square&label=License&colorB=6cc24a">
+  </a>
+  <a title="Twitter: JoseJ_PR" href="https://twitter.com/JoseJ_PR">
+    <img src="https://img.shields.io/twitter/url?color=1991DA&label=Twitter%20%40JoseJ_PR&logo=twitter&logoColor=FFFFFF&style=flat-square&url=https%3A%2F%2Ftwitter.com%2FJoseJ_PR">
+  </a>  
+  <a title="Github: Sponsors" href="https://github.com/sponsors/JoseJPR">
+    <img src="https://img.shields.io/twitter/url?color=032f62&label=Github%20Sponsors%20%40JoseJPR&logo=github&logoColor=FFFFFF&style=flat-square&url=https%3A%2F%2Fgithub.com%2Fsponsors%2FJoseJPR">
+  </a>
+  <br />
+  <br />
+</p>
+
+## 🔖 Description
+
+* Tinder Application for cats with HTML5, CSS3 and JS!
 
 Tinder is an application to meet people nearby. It is developed with native language to iOS and Android, and why not with web language and for cats?
 
-jose.perez@ceroyuno.es
+### What libraries have been used
 
-# What do you need?
+* [JavaScript View](https://github.com/CeroyUno/JavaScriptView)
+* [HammerJS](http://hammerjs.github.io/)
 
-This project is created with Apache Cordova Framework, to be installed on a mobile device with a compatible operating system.
+## 📐 How to work with this project
 
-You can get it work with Chrome and Bracket.io as you can see in the screenshot.
+### 1️⃣ Install this module into your project.
 
-It is recommended to add the plugin for Apache Cordova "Crosswalk" for the Android project.
+```bash
+$npm i
+```
 
-# What libraries have been used?
+### 2️⃣ Run
 
-JavascriptView and HammerJS
+Run this command in your terminal.
 
-http://www.javascriptview.com/
-http://hammerjs.github.io/
+```bash
+$npm run start
+```
 
-# License
+Open your browser: http://localhost:8080
 
-* Project under MIT license [`LICENSE`](LICENSE)
+## ⛽️ Review and Update Sependencies
 
-# Screenshot
+For review and update all npm dependencies of this project you need install in global npm package "npm-check-updates" npm module.
 
-### PROJECT Screenshot
+```bash
+# Install and Run
+$npm i -g npm-check-updates
+$ncu
+```
 
-![PROJECT Screenshot](https://github.com/JoseJPR/Tinder/blob/master/screenshots/screenshot.jpg)
+## License
 
-Designed, flourished and built with all the love in the world by <a href="https://twitter.com/JoseJ_PR" target="_blank">@JoseJ_PR</a>.
+[MIT](LICENSE.md)
 
-Maintained by the <a href="https://github.com/JoseJPR/Tinder/network/members" target="_blank">core</a> team with the help of <a href="https://github.com/JoseJPR/Tinder/graphs/contributors" target="_blank">our contributors</a>.
+## Happy Code
 
-Code licensed under MIT. Docs under <a href="https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)" target="_blank">Apache 2</a> | © 2015 <a href="http://www.ceroyuno.es/" target="_blank">Cero y Uno</a>
+Created with JavaScript, lot of ❤️ and a few ☕️
+
+## This README.md file has been written keeping in mind
+
+[GitHub Markdown](https://guides.github.com/features/mastering-markdown/) \
+[Emoji Cheat Sheet](https://www.webfx.com/tools/emoji-cheat-sheet/)
