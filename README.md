@@ -49,7 +49,7 @@ $npm run start
 
 Open your browser: http://localhost:8080
 
-## ⛽️ Review and Update Sependencies
+## ⛽️ Review and Update Dependencies
 
 For review and update all npm dependencies of this project you need install in global npm package "npm-check-updates" npm module.
 
